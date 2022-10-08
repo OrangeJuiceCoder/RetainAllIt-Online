@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>RetainAllIt</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class = "ttlbx">
+    
+    <h1> RetainAllIt </h1>
+    <h2> The free quizlet alternative.  Best experience, no pay walls. </h2>
+    
+  </div>
+  
+  <h3> Create a set below, or click the button to upload an existing set (filename.retainAllIt) </h3>
+
+  <button class = "stdButn" type = "button" >Upload Set</button>
+  
+  <div id = "cards">
+    <div class = "card" id = "crd1">
+      <input id = "trmin1" type="text" placeholder="Term" autocomplete="off">
+      <input id = "defin1" type="text" placeholder="Definition" autocomplete="off">
+      <button type = "button" class = "remove" id = "1" onclick = "remvCrd(this.id)">Delete Card</button>
+    </div>
+  </div>
+  <button class = "add" type = "button" id="addcrd" onclick="addcrd()">Add Card</button>
+  
+  <script src="script.js"></script>
+  
+</body>
+
+</html>
