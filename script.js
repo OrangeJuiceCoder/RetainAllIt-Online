@@ -1,5 +1,6 @@
 var crds = 1;
 
+// add card
 function addcrd() {
   crds++;
 
@@ -43,13 +44,31 @@ function addcrd() {
   //====================//
 }
 
+// remove card
 function remvCrd(x) {
   const crd = document.getElementById('crd' + x);
   crd.remove();
-  const tin = document.getElementByIdd('trmin' + x);
-  tin.remove();
-  const din = document.getElementById('defin' + x);
-  din.remove();
-  const btn = document.getElementById(x);
-  btn.remove();
+}
+
+//terms and defs
+var trms = [
+  // intentionally empty
+];
+
+var defs = [
+  // intentionally empty
+];
+
+// get all terms and defs from cards 
+function getTDs() {
+  for(var i = 1; i <= crds; i++)
+  {
+    if (document.getElementById('trmin' + i) !== null 
+        && document.getElementById('defin' + i) !== null) {
+      trms.push(document.getElementById('trmin' + i).value);
+      defs.push(document.getElementById('defin' + i).value);
+    }
+  }
+  console.log(trms);
+  console.log(defs);
 }
