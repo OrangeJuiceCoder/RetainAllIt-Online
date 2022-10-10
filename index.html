@@ -16,18 +16,39 @@
     
   </div>
   
-  <h3> Create a set below, or click the button to upload an existing set (filename.retainAllIt) </h3>
+  <h3 style = "margin-top: 5vh"> Create a set below, or click the button to upload an existing set (filename.retainAllIt) </h3>
 
-  <button class = "stdButn" type = "button" onclick = "getTDs()">Upload Set</button>
-  
-  <div id = "cards">
-    <div class = "card" id = "crd1">
-      <input id = "trmin1" type="text" placeholder="Term" autocomplete="off">
-      <input id = "defin1" type="text" placeholder="Definition" autocomplete="off">
-      <button type = "button" class = "remove" id = "1" onclick = "remvCrd(this.id)">Delete Card</button>
+  <button class = "stdButn" type = "button" onclick = "">Upload Set</button>
+
+  <div class = "cardhldr">
+    <div id = "cards" >
+      <div class = "card" id = "crd1">
+        <input id = "trmin1" type="text" placeholder="Term" autocomplete="off">
+        <input id = "defin1" type="text" placeholder="Definition" autocomplete="off">
+        <button type = "button" class = "remove" id = "1" onclick = "remvCrd(this.id)">Delete Card</button>
+      </div>
     </div>
+
+    <button class = "add" type = "button" id="addcrd" onclick="addcrd()">Add Card</button>
   </div>
-  <button class = "add" type = "button" id="addcrd" onclick="addcrd()">Add Card</button>
+
+  <h3 style = "margin-top: 5vh"> You can export this set for a later date by clicking the button, or continue on to start studying </h3>
+
+  <button class = "stdButn" type = "button" onclick = "getTDs()">Export Set</button>
+
+  <h3 style = "margin-top: 5vh"> Choose the length of your study session </h3>
+  <div class = "group">
+	  <div class="switch-field">
+		  <input type="radio" id="small" name="switch" value="sml" checked/>
+		  <label for="small">Short</label>
+		  <input type="radio" id="medium" name="switch" value="med"/>
+		  <label for="medium">Medium</label>
+		  <input type="radio" id="large" name="switch" value="lrg"/>
+		  <label for="large">Long</label>
+	  </div>
+  </div>
+  
+  <button class = "stdButn" type = "button" style = "margin-top: 4vh; margin-bottom: 10vh;" onclick = "getTDs()">Start Studying</button>
   
   <script src="script.js"></script>
   

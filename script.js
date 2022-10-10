@@ -1,4 +1,19 @@
+//===Variables==//
+
+// amount of cards counter
 var crds = 1;
+
+//terms and defs
+var trms = [
+  // intentionally empty
+];
+
+var defs = [
+  // intentionally empty
+];
+
+
+//===Onclick Functions==//
 
 // add card
 function addcrd() {
@@ -50,14 +65,7 @@ function remvCrd(x) {
   crd.remove();
 }
 
-//terms and defs
-var trms = [
-  // intentionally empty
-];
-
-var defs = [
-  // intentionally empty
-];
+//===Multiple use functions==//
 
 // get all terms and defs from cards 
 function getTDs() {
