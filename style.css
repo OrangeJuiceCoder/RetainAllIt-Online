@@ -193,3 +193,7 @@ input[type=text]:focus {
   text-align: center;
   width: max-content;
 }
+
+input[type="file"] {
+    display: none;
+}

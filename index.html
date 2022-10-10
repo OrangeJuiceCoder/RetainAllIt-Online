@@ -18,7 +18,10 @@
   
   <h3 style = "margin-top: 5vh"> Create a set below, or click the button to upload an existing set (filename.retainAllIt) </h3>
 
-  <button class = "stdButn" type = "button" onclick = "">Upload Set</button>
+  <label for="file-upload" class="stdButn">
+ Upload Set
+  </label>
+  <input id="file-upload" type="file"/>
 
   <div class = "cardhldr">
     <div id = "cards" >
@@ -34,7 +37,7 @@
 
   <h3 style = "margin-top: 5vh"> You can export this set for a later date by clicking the button, or continue on to start studying </h3>
 
-  <button class = "stdButn" type = "button" onclick = "getTDs()">Export Set</button>
+  <button class = "stdButn" type = "button" id = "export">Export Set</button>
 
   <h3 style = "margin-top: 5vh"> Choose the length of your study session </h3>
   <div class = "group">
@@ -48,7 +51,7 @@
 	  </div>
   </div>
   
-  <button class = "stdButn" type = "button" style = "margin-top: 4vh; margin-bottom: 10vh;" onclick = "getTDs()">Start Studying</button>
+  <button class = "stdButn" type = "button" style = "margin-top: 4vh; margin-bottom: 10vh;" onclick = "start()">Start Studying</button>
   
   <script src="script.js"></script>
   
