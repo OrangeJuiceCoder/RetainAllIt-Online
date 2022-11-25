@@ -17,15 +17,15 @@ var defs = [
 
 // global storage of current queston
 var randIndx = 0;
-var question = "This is a Placeholder.";
-var answer = "This is a Placeholder.";
 
 // global storage of current correct answer
-
+var question = "This is a Placeholder.";
 
 // global storage of random term picked
+var answer = "This is a Placeholder.";
 
-
+// global storage of the menu page / home page
+var homePg = document.body.innerHTML;
 
 //===Onclick Functions==//
 
@@ -169,6 +169,7 @@ function start() {
 
 //<div class = "animated fadeInDown">
 function createQuizPage() {
+  
   // clear document
   document.body.innerHTML = "";
   
@@ -198,7 +199,7 @@ function createQuizPage() {
   ansrBx.setAttribute('autocomplete', 'off');
   document.getElementById('qCrd').appendChild(ansrBx);
 
-  //<button class = "add" type = "button" id="submitAns" onclick="submitAns()">Submit</button>
+  //<button class = "submit" type = "button" id="submitAns" onclick="submitAns()">Submit</button>
   ansrBttn = document.createElement("button");
   ansrBttn.setAttribute('class', 'submit');
   ansrBttn.setAttribute('type', 'button');
@@ -206,6 +207,24 @@ function createQuizPage() {
   ansrBttn.setAttribute('onclick', 'submitAns()');
   ansrBttn.innerHTML = "Submit";
   document.getElementById('qCrd').appendChild(ansrBttn);
+
+  // create footer
+  footer = document.createElement("div");
+  footer.classList.add('footer');
+  footer.setAttribute('id', 'footr');
+  document.body.appendChild(footer);
+
+  // return to home button
+  //<button class = "submit" type = "button" id="return" onclick="return()">Submit</button>
+  rtrn = document.createElement("button");
+  rtrn.setAttribute('class', 'submit');
+  rtrn.setAttribute('type', 'button');
+  rtrn.setAttribute('id', 'return');
+  rtrn.setAttribute('onclick', 'returnToHmPg()');
+  rtrn.innerHTML = "Back to Homepage";
+  document.getElementById('footr').appendChild(rtrn);
+
+  // extra info text
 }
 
 function submitAns() {
@@ -223,11 +242,39 @@ function submitAns() {
       }
       wrong = document.createElement("p");
       wrong.setAttribute('id', 'wrong');
+      wrong.classList.add("wrngAnimated");
+      wrong.classList.add("flash");
       wrong.innerHTML = "You're Wrong!  Try again!";  
       document.getElementById('qCrd').appendChild(wrong);
     }
-  }
+  }    
+}
+
+function returnToHmPg(){
+  document.body.innerHTML = "";
+  document.body.innerHTML = homePg;
+
+  // set up upload and downloads //
+  document.getElementById('file-upload').addEventListener('change', getFile)
+  // Start file download.
+document.getElementById("export").addEventListener("click", function(){
+    getTDs();
+    // Generate download of hello.txt file with some content
+    var text = trms + "\n" + defs;
+    var filename = "studyset.retainAllIt";
     
+    download(filename, text);
+    trms.length = 0;
+    defs.length = 0;
+}, false);
+  // ========================= //
+  
+  tempTs = trms;
+  tempDs = defs;
+  trms = [];
+  defs = [];
+  createCards(tempTs, tempDs);
+  remvCrd(1); 
 }
 
 //===Multiple use functions==//
