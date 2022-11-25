@@ -15,6 +15,18 @@ var defs = [
   // intentionally empty
 ];
 
+// global storage of current queston
+var randIndx = 0;
+var question = "This is a Placeholder.";
+var answer = "This is a Placeholder.";
+
+// global storage of current correct answer
+
+
+// global storage of random term picked
+
+
+
 //===Onclick Functions==//
 
 // add card
@@ -151,6 +163,71 @@ function start() {
       mode = rds[i].value;
   }
   console.log(mode);
+  
+  createQuizPage();
+}
+
+//<div class = "animated fadeInDown">
+function createQuizPage() {
+  // clear document
+  document.body.innerHTML = "";
+  
+  // create card holder
+  qCard = document.createElement("div");
+  qCard.classList.add('qCard');
+  qCard.classList.add('animated');
+  qCard.classList.add('fadeInDown');
+  qCard.setAttribute('id', 'qCrd');
+  document.body.appendChild(qCard);
+
+  randIndx =  parseInt(Math.random()*trms.length);
+  question = trms[randIndx];
+  answer = defs[randIndx];
+
+  questionText = document.createElement("h1");
+  questionText.setAttribute('class', 'spaceh1');
+  questionText.innerHTML = question;  
+  document.getElementById('qCrd').appendChild(questionText);
+
+  //<input id = "ans" type="text" placeholder="Enter Answer Here" autocomplete="off">
+  ansrBx = document.createElement("input");
+  ansrBx.setAttribute('id', 'ans');
+  ansrBx.setAttribute('type', 'text');
+  ansrBx.setAttribute('class', 'ansr');
+  ansrBx.setAttribute('placeholder', 'Enter Answer Here!');
+  ansrBx.setAttribute('autocomplete', 'off');
+  document.getElementById('qCrd').appendChild(ansrBx);
+
+  //<button class = "add" type = "button" id="submitAns" onclick="submitAns()">Submit</button>
+  ansrBttn = document.createElement("button");
+  ansrBttn.setAttribute('class', 'submit');
+  ansrBttn.setAttribute('type', 'button');
+  ansrBttn.setAttribute('id', 'submitAns');
+  ansrBttn.setAttribute('onclick', 'submitAns()');
+  ansrBttn.innerHTML = "Submit";
+  document.getElementById('qCrd').appendChild(ansrBttn);
+}
+
+function submitAns() {
+  if (document.getElementById('ans') !== null)
+  {
+    var submittedAns = document.getElementById('ans').value;
+    if (submittedAns === answer)
+    {
+      createQuizPage();
+    }
+    else
+    {
+      if (document.getElementById('wrong') !== null) {
+        document.getElementById('wrong').remove();
+      }
+      wrong = document.createElement("p");
+      wrong.setAttribute('id', 'wrong');
+      wrong.innerHTML = "You're Wrong!  Try again!";  
+      document.getElementById('qCrd').appendChild(wrong);
+    }
+  }
+    
 }
 
 //===Multiple use functions==//

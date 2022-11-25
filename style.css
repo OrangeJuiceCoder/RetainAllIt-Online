@@ -1,13 +1,8 @@
-html {
-  height: 100%;
-  width: 100%;
+html{
+    height: 100%;
 }
 
-body {
-  height:100%;
-  width: 60%;
-  margin: auto;
-}
+body { width: 960px; margin: 0 auto; }
 
 html *
 {
@@ -32,12 +27,29 @@ body {background-color: #292c5c;}
   text-align: center;
 }
 
+.qCard {
+  z-index: 1;
+  background-color: #444c8d;
+  padding: 3px;
+  margin: 0 auto;
+  width: 100%;
+  height: 75%;
+  text-align: center;
+  border-left: 5px solid  #7086bd;
+  border-right: 5px solid #7086bd;
+}
+
 h1 
 {
   font-size: 3.052rem;
   letter-spacing: 0.4px;
   word-spacing: 0.4px;
   margin-bottom: 1px;
+}
+
+.spaceh1
+{
+  margin-bottom: 25px !important;
 }
 
 h2
@@ -114,6 +126,29 @@ p
     box-shadow: 0 6px 20px rgb(145 174 248 / 23%);
 }  
 
+.submit {
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+  width: 75%;
+  border: none;
+  background-color: #7086bd;
+  margin: auto;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  padding: 15px;
+  border-radius: 25px;
+  text-align: center;
+  color: white;
+  font-weight: 400;
+  font-size: 16px;
+  transition: background 0.2s ease,color 0.2s ease,box-shadow 0.2s ease;           
+}
+.submit:hover{
+    background: rgba(145, 174, 248, 0.9);
+    box-shadow: 0 6px 20px rgb(145 174 248 / 23%);
+}  
+
 .cardhldr {
   border: 2px solid #7086bd;
   border-radius: 50px;
@@ -144,6 +179,22 @@ input[type=text] {
 }
 
 input[type=text]:focus {
+  border-bottom: 5px solid #7a83ff;
+}
+
+.ansr[type=text] {
+  width: 70%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 0;
+  background-color: #333861;
+  border-radius: 5px;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  outline: none;
+}
+
+.ansr[type=text]:focus {
   border-bottom: 5px solid #7a83ff;
 }
 
@@ -196,4 +247,28 @@ input[type=text]:focus {
 
 input[type="file"] {
     display: none;
+}
+
+.animated {
+    -webkit-animation-duration: 10s;
+    animation-duration: 3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        border-radius: 50px;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+/*         border-radius: 0px 0px 50px 50px; */
+        border-radius: 50px;
+        transform: translateY(50%);
+    }
+}
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
 }
