@@ -12,7 +12,7 @@
   <div class = "ttlbx">
     
     <h1> RetainAllIt </h1>
-    <h2> [Open Beta 1.0] The free quizlet alternative.  Best experience, no pay walls. </h2>
+    <h2> [Open Beta 1.1.1] The free quizlet alternative.  Best experience, no pay walls. </h2>
     
   </div>
   
@@ -39,7 +39,13 @@
 
   <button class = "stdButn" type = "button" id = "export">Export Set</button>
 
-  <h3 style = "margin-top: 5vh"> Choose the length of your study session </h3>
+  <br>
+
+  <h3 style = "margin-top: 5vh; display: inline-block;"> Choose the length of your study session </h3>
+  <div class="hover-text" style = "display: inline-block; font-weight: 100 !important;"> ⓘ
+    <span class="tooltip-text" id="top">This feature currently does nothing</span>
+  </div>
+  
   <div class = "group">
 	  <div class="switch-field">
 		  <input type="radio" id="small" name="switch" value="sml" checked/>
@@ -52,9 +58,14 @@
   </div>
   
   <button class = "stdButn" type = "button" style = "margin-top: 4vh;" onclick = "start()">Start Studying</button>
-  <p>WARNING!  Export your set before studying!  RetainAllIt is still in VERY early development, and currently does not have a return to home page feature.</p>
-  <p>You will have to reload the page to stop studying, and so it is ideal to save your set so you can upload it after reloading the page.</p>
-    
+
+  <div>
+  <p>WARNING!  Export your set before studying!  RetainAllIt is still in VERY early development, and something can go wrong at any time.</p>
+  <p>There is a known possible preformance issue if you return to the home page too much times.  It is therefore suggested to reload the page if you encounter any lag or freezes (which is why you should always export your sets).</p>
+  </div>
+
+  <br>
+  
   <script src="script.js"></script>
   
 </body>

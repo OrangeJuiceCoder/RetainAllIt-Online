@@ -198,7 +198,13 @@ function createQuizPage() {
   ansrBx.setAttribute('placeholder', 'Enter Answer Here!');
   ansrBx.setAttribute('autocomplete', 'off');
   document.getElementById('qCrd').appendChild(ansrBx);
-
+  // submit on enter key
+  ansrBx.addEventListener("keydown", function (e) {
+    if (e.keyCode === 13) {
+        submitAns();
+    }
+  });
+  
   //<button class = "submit" type = "button" id="submitAns" onclick="submitAns()">Submit</button>
   ansrBttn = document.createElement("button");
   ansrBttn.setAttribute('class', 'submit');
